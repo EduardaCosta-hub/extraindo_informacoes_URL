@@ -1,7 +1,23 @@
-url = "http://insoft-lnx13:8080/akitasoft/app/?lang=pt_BR&theme=classic"
-separador = url.find("?")
-url_base = url[:separador]
-url_parametros = url[separador+1:]
-print(url)
-print(url_base)
-print(url_parametros)
+class ExtratorURL:
+    def __init__(self, url):
+        """Salva a url em um atributo do objeto (self.url = url) e verifica se a url é válida"""
+        ...
+
+    def sanitiza_url(self, url):
+        """Retorna a url removendo espaços em branco."""
+        ...
+
+    def valida_url(self):
+        """Valida se a url está vazia"""
+        ...
+
+    def get_url_base(self):
+        """Retorna a base da url."""
+        ...
+
+    def get_url_parametros(self):
+        """Retorna os parâmetros da url."""
+        ...
+
+    def get_valor_parametro(self, parametro_busca):
+        """Retorna o valor do parametro `parametro_busca`."""
