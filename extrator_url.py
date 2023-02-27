@@ -2,7 +2,7 @@ import re
 class ExtratorURL:
     def __init__(self, purl):
         self.__url = purl.strip
-        print(url)
+        print(purl)
         print(self.__url)
 
     def valida_url(self):
