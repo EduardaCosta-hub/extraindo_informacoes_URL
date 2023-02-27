@@ -1,7 +1,7 @@
 import re
 class ExtratorURL:
-    def __init__(self, url):
-        self.__url = url.strip
+    def __init__(self, purl):
+        self.__url = purl.strip
         print(url)
         print(self.__url)
 
