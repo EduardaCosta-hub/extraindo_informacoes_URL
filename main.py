@@ -1,4 +1,7 @@
-url = "http://insoft-lnx13:8080/akitasoft/app/?lang=pt_BR&theme=classic"
+from extrator_url import ExtratorURL
+url = 'https://www.w3schools.com/python'
+url_teste = ExtratorURL(url)
+url_teste.valida_url()
 separador = url.find("?")
 url_base = url[:separador]
 url_parametros = url[separador+1:]

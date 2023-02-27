@@ -1,15 +1,21 @@
+import re
 class ExtratorURL:
     def __init__(self, url):
-        """Salva a url em um atributo do objeto (self.url = url) e verifica se a url é válida"""
-        ...
-
-    def sanitiza_url(self, url):
-        """Retorna a url removendo espaços em branco."""
-        ...
+        self.__url = url.strip
+        print(url)
+        print(self.__url)
 
     def valida_url(self):
-        """Valida se a url está vazia"""
-        ...
+        url = self.__url
+        print(url)
+        if not url:  
+            raise ValueError("A URL está vazia")
+        
+        padrao_url = re.compile('(http(s)?://)?(www.)?w3schools.com(.br)?/python')
+        match = padrao_url.match(url)
+        if not match:
+            raise ValueError("A URL não é válida.")
+        print("URL validada com sucesso!")
 
     def get_url_base(self):
         """Retorna a base da url."""
