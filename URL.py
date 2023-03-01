@@ -31,6 +31,17 @@ class URL:
         else:
             valor = self.url_parametros[indice_valor:indice_e_comercial]
         return "O valor do parâmetro "+ pNome_parametro + " é " + valor
+    
+    #special methods
+    
+    def __len__(self):
+        return len(self.__url)
+
+    def __str__(self):
+        return self.url_completa + "\n" + self.url_base + "\n" + self.url_parametros
+
+    def __eq__(self, other):
+        return self.__url == other.__url
                
     #properties
     
@@ -51,3 +62,5 @@ class URL:
             separador = self.__url.find("?")
             url_parametros = self.__url[(separador+1):]
             return "URL parâmetros: " + url_parametros
+        
+    

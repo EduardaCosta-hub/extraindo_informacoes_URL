@@ -6,6 +6,7 @@ print(url_google.get_valor_parametro("q"))
 print(url_google.get_valor_parametro("source"))
 print(url_google.get_valor_parametro("ved"))
 print(url_google.get_valor_parametro("oq"))
+print(url_google)
 
 #tests
 
