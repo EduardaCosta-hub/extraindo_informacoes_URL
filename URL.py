@@ -18,9 +18,20 @@ class URL:
         match = padrao_url.match(self.__url)
         if not match:
             raise ValueError("A URL não é válida.")
-        print("URL validada com sucesso!")
         return True
-                
+    
+    #getters and setters
+    
+    def get_valor_parametro(self, pNome_parametro):
+        indice_parametro = self.url_parametros.find(str(pNome_parametro))
+        indice_valor = indice_parametro + len(str(pNome_parametro)) + 1
+        indice_e_comercial = self.url_parametros.find('&', indice_valor)
+        if indice_e_comercial == -1:
+            valor = self.url_parametros[indice_valor:]
+        else:
+            valor = self.url_parametros[indice_valor:indice_e_comercial]
+        return "O valor do parâmetro "+ pNome_parametro + " é " + valor
+               
     #properties
     
     @property    
